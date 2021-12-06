@@ -56,6 +56,7 @@ namespace ProgettoCSharpFormDataBase
             // NomeUtente
             // 
             this.NomeUtente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NomeUtente.BackColor = System.Drawing.SystemColors.ControlLight;
             this.NomeUtente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NomeUtente.Location = new System.Drawing.Point(49, 169);
             this.NomeUtente.Name = "NomeUtente";
@@ -65,6 +66,7 @@ namespace ProgettoCSharpFormDataBase
             // PasswordUtente
             // 
             this.PasswordUtente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PasswordUtente.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PasswordUtente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordUtente.Location = new System.Drawing.Point(49, 261);
             this.PasswordUtente.Name = "PasswordUtente";
@@ -84,13 +86,14 @@ namespace ProgettoCSharpFormDataBase
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(64, 331);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(210, 65);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // pictureBox1
@@ -119,7 +122,7 @@ namespace ProgettoCSharpFormDataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(339, 450);
             this.Controls.Add(this.Error);
             this.Controls.Add(this.pictureBox1);

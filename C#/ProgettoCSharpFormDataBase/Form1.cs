@@ -14,7 +14,7 @@ namespace ProgettoCSharpFormDataBase
     public partial class Form1 : Form
     {
         //ordina la list view
-        private ListViewColumnSorter lvwColumnSorter;
+        //private ListViewColumnSorter lvwColumnSorter;
         Random rnd = new Random();
 
         string MyConnectionString = "Server=localhost;Database=progetto;Uid=root;Pwd=;";
@@ -23,8 +23,8 @@ namespace ProgettoCSharpFormDataBase
         {
             InitializeComponent();
             //ordina la list view
-            lvwColumnSorter = new ListViewColumnSorter();
-            this.listView1.ListViewItemSorter = lvwColumnSorter;
+            //lvwColumnSorter = new ListViewColumnSorter();
+            //this.listView1.ListViewItemSorter = lvwColumnSorter;
         }
 
         //evento bottone per inserire utente
@@ -44,8 +44,8 @@ namespace ProgettoCSharpFormDataBase
         //evento bottone per visualizzae database
         private void BtnVisualizza_Click(object sender, EventArgs e)
         {
-            listView1.Columns.Clear();
-            setColumns();
+            //listView1.Columns.Clear();
+            //setColumns();
             MySqlConnection connection = new MySqlConnection(MyConnectionString);
             connection.Open();
             try
@@ -53,18 +53,11 @@ namespace ProgettoCSharpFormDataBase
                 MySqlCommand cmd = new MySqlCommand("SelezionaTutto", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                DataTable dp = new DataTable();
+                DataSet dp = new DataSet();
                 da.Fill(dp);
 
-                listView1.Items.Clear();
-
-                for (int i = 0;i< dp.Rows.Count-1;i++)
-                {
-                    listView1.Items.Add(dp.Rows[i].ItemArray[0].ToString());
-                    listView1.Items[i].SubItems.Add(dp.Rows[i].ItemArray[1].ToString());
-                    listView1.Items[i].SubItems.Add(dp.Rows[i].ItemArray[2].ToString());
-                    listView1.Items[i].SubItems.Add(dp.Rows[i].ItemArray[3].ToString());
-                }
+                dataGridView1.DataSource = dp.Tables[0];
+                dataGridView1.Columns["Id"].Visible = false;
 
             }
             catch (Exception ex)
@@ -74,18 +67,32 @@ namespace ProgettoCSharpFormDataBase
             connection.Close();
         }
 
+        private void utenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Close();
+            f.Show();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Menu m = new Menu();
+            this.Close();
+            m.Show();
+        }
+
         //setta i nomi delle colonne
-        public void setColumns()
+        /*public void setColumns()
         {
             listView1.Columns.Add("Id", 70);
             listView1.Columns.Add("Nome", 70);
             listView1.Columns.Add("Cognome", 70);
             listView1.Columns.Add("Email", 100);
-        }
+        }*/
 
 
         //ordina la colonna una volta che si schiaccia su di essa
-        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        /*private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             if (e.Column == lvwColumnSorter.SortColumn)
             {
@@ -104,6 +111,6 @@ namespace ProgettoCSharpFormDataBase
                 lvwColumnSorter.Order = SortOrder.Ascending;
             }
             this.listView1.Sort();
-        }
+        }*/
     }
 }

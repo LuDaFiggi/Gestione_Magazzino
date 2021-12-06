@@ -24,5 +24,19 @@ namespace ProgettoCSharpFormDataBase
             this.Close();
             m.Show();
         }
+
+        private void homeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Menu m = new Menu();
+            this.Close();
+            m.Show();
+        }
+
+        private void utenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Close();
+            f.Show();
+        }
     }
 }

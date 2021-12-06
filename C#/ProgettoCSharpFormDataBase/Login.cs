@@ -50,7 +50,9 @@ namespace ProgettoCSharpFormDataBase
                         t = u.controlloConnessione();
                         if(t == "true")
                         {
-                            MessageBox.Show("giusto");
+                            this.Hide();
+                            Menu f = new Menu();
+                            f.ShowDialog();
                         }
                         else
                         {
