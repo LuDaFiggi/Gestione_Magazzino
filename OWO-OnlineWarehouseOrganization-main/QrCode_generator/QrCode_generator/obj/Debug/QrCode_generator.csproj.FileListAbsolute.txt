@@ -1,0 +1,25 @@
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.exe.config
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.exe
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.pdb
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\bin\Debug\Zen.Barcode.Core.dll
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.AssemblyReference.cache
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.Form1.resources
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.Properties.Resources.resources
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.GenerateResource.cache
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.CoreCompileInputs.cache
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.CopyComplete
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.exe
+F:\GESTIONE PROGETTO\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.pdb
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.exe.config
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.exe
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.pdb
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csprojAssemblyReference.cache
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.Form1.resources
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.Properties.Resources.resources
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.qr.resources
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.GenerateResource.cache
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.CoreCompileInputs.cache
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.CopyComplete
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.exe
+C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.pdb
