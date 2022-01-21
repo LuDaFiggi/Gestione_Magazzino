@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using AForge.Video.DirectShow;
 using AForge.Video;
 using ZXing;
+using System.Collections.Generic;
 
 namespace TEST2
 {
@@ -14,17 +15,28 @@ namespace TEST2
         FilterInfoCollection filtercollection;
         VideoCaptureDevice cam;
         Result lastRes;
+        List<TabPage> pages;
         public Prova()
         {
             InitializeComponent();
-            Menu.TabPages.Remove(Tab_Home);
-            Menu.TabPages.Remove(Tab_QR);
             Size s = new Size(355, 489);
             Menu.Size = s;
             this.MaximizeBox = false;
             u = new Utente();
             lastRes = null;
             pictureQR.Visible = false;
+            pages = returnAllNewPages();
+            leaveOnlyLoginTab();
+        }
+        private List<TabPage> returnAllNewPages()
+        {
+            //metodo terribile
+            List<TabPage> pages = new List<TabPage>();
+            pages.Add(Tab_Home);
+            pages.Add(Tab_Utente);
+            pages.Add(Tab_QR);
+            pages.Add(Tab_GeneraQR);
+            return pages;
         }
         private void Errore(string t)
         {
@@ -35,7 +47,28 @@ namespace TEST2
             timer.Enabled = true;
         }
 
+        private void leaveOnlyLoginTab()
+        {
+            foreach (TabPage tp in Menu.TabPages)
+            {
+                string name = tp.Name;
+                if (name != "Tab_Utente")
+                {
+                    Menu.TabPages.Remove(tp);
+                }
+            }
 
+        }
+        private void addAllPages()
+        {
+            Menu.TabPages.Clear();
+            int index = 0;
+            foreach (TabPage tp in pages)
+            {
+                Menu.TabPages.Add(pages[index]);
+                index++;
+            }
+        }
         private void resetLabel()
         {
             Error.Visible = false;
@@ -90,17 +123,9 @@ namespace TEST2
             //1315; 676
             Size s = new Size(1315, 676);
             Menu.Size = s;
-            Menu.TabPages.Add(Tab_Home);
-            Menu.TabPages.Remove(Tab_Utente);
-            Menu.TabPages.Add(Tab_Utente);
-            Menu.TabPages.Add(Tab_QR);
+            addAllPages();
 
-        }
-
-        private void Tab_Utente_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void Prova_Load(object sender, EventArgs e)
         {
@@ -117,21 +142,21 @@ namespace TEST2
             cam = new VideoCaptureDevice(filtercollection[comboCam.SelectedIndex].MonikerString);
             cam.NewFrame += Cam_NewFrame;
             cam.Start();
-            timerQR.Start();            
-            while(pictureQR.Image == null)
+            timerQR.Start();
+            while (pictureQR.Image == null)
             {
 
             }
             pictureQR.Size = pictureQR.Image.Size;
             pictureQR.Visible = true;
-          
-          
+
+
         }
 
         private void Cam_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             pictureQR.Image = (Bitmap)eventArgs.Frame.Clone();
-            
+
         }
 
         private void timerQR_Tick(object sender, EventArgs e)
@@ -156,11 +181,14 @@ namespace TEST2
 
         private void Prova_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (cam.IsRunning)
+            if (cam != null)
             {
-                cam.Stop();
-                timerQR.Stop();
+                if (cam.IsRunning)
+                {
+                    cam.Stop();
+                }
             }
+            timerQR.Stop();
         }
     }
 }

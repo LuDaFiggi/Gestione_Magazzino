@@ -43,12 +43,13 @@ namespace TEST2
             this.NomeUtente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Tab_QR = new System.Windows.Forms.TabPage();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.comboCam = new System.Windows.Forms.ComboBox();
-            this.pictureQR = new System.Windows.Forms.PictureBox();
-            this.lblReaded = new System.Windows.Forms.Label();
-            this.timerQR = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.lblReaded = new System.Windows.Forms.Label();
+            this.pictureQR = new System.Windows.Forms.PictureBox();
+            this.comboCam = new System.Windows.Forms.ComboBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.timerQR = new System.Windows.Forms.Timer(this.components);
+            this.Tab_GeneraQR = new System.Windows.Forms.TabPage();
             this.Menu.SuspendLayout();
             this.Tab_Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
@@ -63,6 +64,7 @@ namespace TEST2
             this.Menu.Controls.Add(this.Tab_Home);
             this.Menu.Controls.Add(this.Tab_Utente);
             this.Menu.Controls.Add(this.Tab_QR);
+            this.Menu.Controls.Add(this.Tab_GeneraQR);
             this.Menu.Location = new System.Drawing.Point(-2, 3);
             this.Menu.Name = "Menu";
             this.Menu.SelectedIndex = 0;
@@ -75,7 +77,7 @@ namespace TEST2
             this.Tab_Home.Location = new System.Drawing.Point(4, 22);
             this.Tab_Home.Name = "Tab_Home";
             this.Tab_Home.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Home.Size = new System.Drawing.Size(999, 458);
+            this.Tab_Home.Size = new System.Drawing.Size(1311, 620);
             this.Tab_Home.TabIndex = 0;
             this.Tab_Home.Text = "HOME";
             this.Tab_Home.UseVisualStyleBackColor = true;
@@ -102,11 +104,10 @@ namespace TEST2
             this.Tab_Utente.Location = new System.Drawing.Point(4, 22);
             this.Tab_Utente.Name = "Tab_Utente";
             this.Tab_Utente.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Utente.Size = new System.Drawing.Size(999, 458);
+            this.Tab_Utente.Size = new System.Drawing.Size(1311, 620);
             this.Tab_Utente.TabIndex = 1;
             this.Tab_Utente.Text = "Utente";
             this.Tab_Utente.UseVisualStyleBackColor = true;
-            this.Tab_Utente.Click += new System.EventHandler(this.Tab_Utente_Click);
             // 
             // Error
             // 
@@ -189,28 +190,14 @@ namespace TEST2
             this.Tab_QR.Text = "QR";
             this.Tab_QR.UseVisualStyleBackColor = true;
             // 
-            // timer
+            // label3
             // 
-            this.timer.Interval = 3000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // comboCam
-            // 
-            this.comboCam.FormattingEnabled = true;
-            this.comboCam.Location = new System.Drawing.Point(327, 48);
-            this.comboCam.Name = "comboCam";
-            this.comboCam.Size = new System.Drawing.Size(386, 21);
-            this.comboCam.TabIndex = 0;
-            this.comboCam.SelectionChangeCommitted += new System.EventHandler(this.comboCam_SelectionChangeCommitted);
-            // 
-            // pictureQR
-            // 
-            this.pictureQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureQR.Location = new System.Drawing.Point(327, 75);
-            this.pictureQR.Name = "pictureQR";
-            this.pictureQR.Size = new System.Drawing.Size(946, 483);
-            this.pictureQR.TabIndex = 1;
-            this.pictureQR.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(126, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "TESTO QR";
             // 
             // lblReaded
             // 
@@ -221,19 +208,43 @@ namespace TEST2
             this.lblReaded.Size = new System.Drawing.Size(245, 516);
             this.lblReaded.TabIndex = 3;
             // 
+            // pictureQR
+            // 
+            this.pictureQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureQR.Location = new System.Drawing.Point(327, 75);
+            this.pictureQR.Name = "pictureQR";
+            this.pictureQR.Size = new System.Drawing.Size(946, 483);
+            this.pictureQR.TabIndex = 1;
+            this.pictureQR.TabStop = false;
+            // 
+            // comboCam
+            // 
+            this.comboCam.FormattingEnabled = true;
+            this.comboCam.Location = new System.Drawing.Point(327, 48);
+            this.comboCam.Name = "comboCam";
+            this.comboCam.Size = new System.Drawing.Size(386, 21);
+            this.comboCam.TabIndex = 0;
+            this.comboCam.SelectionChangeCommitted += new System.EventHandler(this.comboCam_SelectionChangeCommitted);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 3000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // timerQR
             // 
             this.timerQR.Interval = 500;
             this.timerQR.Tick += new System.EventHandler(this.timerQR_Tick);
             // 
-            // label3
+            // Tab_GeneraQR
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "TESTO QR";
+            this.Tab_GeneraQR.Location = new System.Drawing.Point(4, 22);
+            this.Tab_GeneraQR.Name = "Tab_GeneraQR";
+            this.Tab_GeneraQR.Padding = new System.Windows.Forms.Padding(3);
+            this.Tab_GeneraQR.Size = new System.Drawing.Size(1311, 620);
+            this.Tab_GeneraQR.TabIndex = 3;
+            this.Tab_GeneraQR.Text = "Genera QR";
+            this.Tab_GeneraQR.UseVisualStyleBackColor = true;
             // 
             // Prova
             // 
@@ -282,5 +293,6 @@ namespace TEST2
         private System.Windows.Forms.Label lblReaded;
         private System.Windows.Forms.Timer timerQR;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TabPage Tab_GeneraQR;
     }
 }
