@@ -47,9 +47,9 @@ namespace TEST2
             this.lblReaded = new System.Windows.Forms.Label();
             this.pictureQR = new System.Windows.Forms.PictureBox();
             this.comboCam = new System.Windows.Forms.ComboBox();
+            this.Tab_GeneraQR = new System.Windows.Forms.TabPage();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.timerQR = new System.Windows.Forms.Timer(this.components);
-            this.Tab_GeneraQR = new System.Windows.Forms.TabPage();
             this.Menu.SuspendLayout();
             this.Tab_Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
@@ -84,10 +84,11 @@ namespace TEST2
             // 
             // pictureHome
             // 
-            this.pictureHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureHome.Image")));
+            this.pictureHome.Image = global::TEST2.Properties.Resources.Logo;
             this.pictureHome.Location = new System.Drawing.Point(0, 6);
             this.pictureHome.Name = "pictureHome";
-            this.pictureHome.Size = new System.Drawing.Size(493, 380);
+            this.pictureHome.Size = new System.Drawing.Size(1285, 594);
+            this.pictureHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureHome.TabIndex = 20;
             this.pictureHome.TabStop = false;
             // 
@@ -226,16 +227,6 @@ namespace TEST2
             this.comboCam.TabIndex = 0;
             this.comboCam.SelectionChangeCommitted += new System.EventHandler(this.comboCam_SelectionChangeCommitted);
             // 
-            // timer
-            // 
-            this.timer.Interval = 3000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // timerQR
-            // 
-            this.timerQR.Interval = 500;
-            this.timerQR.Tick += new System.EventHandler(this.timerQR_Tick);
-            // 
             // Tab_GeneraQR
             // 
             this.Tab_GeneraQR.Location = new System.Drawing.Point(4, 22);
@@ -245,6 +236,16 @@ namespace TEST2
             this.Tab_GeneraQR.TabIndex = 3;
             this.Tab_GeneraQR.Text = "Genera QR";
             this.Tab_GeneraQR.UseVisualStyleBackColor = true;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 3000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // timerQR
+            // 
+            this.timerQR.Interval = 500;
+            this.timerQR.Tick += new System.EventHandler(this.timerQR_Tick);
             // 
             // Prova
             // 
