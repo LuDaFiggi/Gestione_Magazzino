@@ -147,8 +147,9 @@ namespace TEST2
             // 
             this.PasswordUtente.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PasswordUtente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordUtente.Location = new System.Drawing.Point(43, 240);
+            this.PasswordUtente.Location = new System.Drawing.Point(39, 240);
             this.PasswordUtente.Name = "PasswordUtente";
+            this.PasswordUtente.PasswordChar = '*';
             this.PasswordUtente.Size = new System.Drawing.Size(241, 29);
             this.PasswordUtente.TabIndex = 24;
             // 

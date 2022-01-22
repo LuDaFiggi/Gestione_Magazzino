@@ -33,8 +33,7 @@ namespace TEST2
             NomeUtente.GotFocus += RemoveTextUser;
             NomeUtente.LostFocus += AddTextUser;
             PasswordUtente.GotFocus += RemoveTextPass;
-            PasswordUtente.LostFocus += AddTextPass;
-            //this.ActiveControl = Tab_Utente;
+            PasswordUtente.LostFocus += AddTextPass;         
 
         }
         private void RemoveTextPass(object sender, EventArgs e)
