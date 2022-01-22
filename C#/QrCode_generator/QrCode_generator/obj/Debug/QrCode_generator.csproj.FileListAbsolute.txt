@@ -23,3 +23,16 @@ C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrC
 C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.CopyComplete
 C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.exe
 C:\Users\lucab\Desktop\OWO-OnlineWarehouseOrganization-main\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.pdb
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.exe.config
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.exe
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\bin\Debug\QrCode_generator.pdb
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\bin\Debug\Zen.Barcode.Core.dll
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.AssemblyReference.cache
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.Form1.resources
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.Properties.Resources.resources
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.qr.resources
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.GenerateResource.cache
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.CoreCompileInputs.cache
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.csproj.CopyComplete
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.exe
+R:\Documents\OWO-OnlineWarehouseOrganization\C#\QrCode_generator\QrCode_generator\obj\Debug\QrCode_generator.pdb

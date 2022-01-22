@@ -16,6 +16,7 @@ namespace TEST2
         VideoCaptureDevice cam;
         Result lastRes;
         List<TabPage> pages;
+        AutoCompleteStringCollection userHistory = new AutoCompleteStringCollection();
         public Prova()
         {
             InitializeComponent();
@@ -120,12 +121,14 @@ namespace TEST2
                 }
                 else
                 {
+                    userHistory.Add(NomeUtente.Text);
                     string t = u.popolaDati(NomeUtente.Text, PasswordUtente.Text);
                     if (t == "true")
                     {
                         t = u.controlloConnessione();
                         if (t == "true")
                         {
+
                             this.Hide();
                             Menu f = new Menu();
                             f.ShowDialog();
@@ -228,7 +231,10 @@ namespace TEST2
         }
 
         private void Prova_Shown(object sender, EventArgs e)
-        {           
+        {            
+            NomeUtente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            NomeUtente.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            NomeUtente.AutoCompleteCustomSource = userHistory;
             PasswordUtente.Select();
             NomeUtente.Select();
             Error.Select();
