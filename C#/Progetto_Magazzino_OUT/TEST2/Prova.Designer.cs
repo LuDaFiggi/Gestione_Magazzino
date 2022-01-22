@@ -73,6 +73,8 @@ namespace TEST2
             // 
             // Tab_Home
             // 
+            this.Tab_Home.BackColor = System.Drawing.Color.Gray;
+            this.Tab_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Tab_Home.Controls.Add(this.pictureHome);
             this.Tab_Home.Location = new System.Drawing.Point(4, 22);
             this.Tab_Home.Name = "Tab_Home";
@@ -80,14 +82,15 @@ namespace TEST2
             this.Tab_Home.Size = new System.Drawing.Size(1311, 620);
             this.Tab_Home.TabIndex = 0;
             this.Tab_Home.Text = "HOME";
-            this.Tab_Home.UseVisualStyleBackColor = true;
             // 
             // pictureHome
             // 
+            this.pictureHome.BackColor = System.Drawing.Color.White;
+            this.pictureHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureHome.Image = global::TEST2.Properties.Resources.Logo;
-            this.pictureHome.Location = new System.Drawing.Point(0, 6);
+            this.pictureHome.Location = new System.Drawing.Point(0, 0);
             this.pictureHome.Name = "pictureHome";
-            this.pictureHome.Size = new System.Drawing.Size(1285, 594);
+            this.pictureHome.Size = new System.Drawing.Size(1305, 103);
             this.pictureHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureHome.TabIndex = 20;
             this.pictureHome.TabStop = false;
@@ -109,12 +112,13 @@ namespace TEST2
             this.Tab_Utente.TabIndex = 1;
             this.Tab_Utente.Text = "Utente";
             this.Tab_Utente.UseVisualStyleBackColor = true;
+            this.Tab_Utente.Click += new System.EventHandler(this.Tab_Utente_Click);
             // 
             // Error
             // 
             this.Error.Location = new System.Drawing.Point(3, 398);
             this.Error.Name = "Error";
-            this.Error.Size = new System.Drawing.Size(333, 36);
+            this.Error.Size = new System.Drawing.Size(355, 36);
             this.Error.TabIndex = 27;
             this.Error.Visible = false;
             // 
@@ -137,7 +141,7 @@ namespace TEST2
             this.btnLogin.TabIndex = 25;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // PasswordUtente
             // 
@@ -220,6 +224,7 @@ namespace TEST2
             // 
             // comboCam
             // 
+            this.comboCam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCam.FormattingEnabled = true;
             this.comboCam.Location = new System.Drawing.Point(327, 48);
             this.comboCam.Name = "comboCam";
@@ -256,11 +261,12 @@ namespace TEST2
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1299, 637);
             this.Controls.Add(this.Menu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Prova";
             this.Text = "Prova";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Prova_FormClosing);
             this.Load += new System.EventHandler(this.Prova_Load);
+            this.Shown += new System.EventHandler(this.Prova_Shown);
             this.Menu.ResumeLayout(false);
             this.Tab_Home.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).EndInit();

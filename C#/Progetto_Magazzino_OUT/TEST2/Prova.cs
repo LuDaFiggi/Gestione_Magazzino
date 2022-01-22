@@ -19,6 +19,7 @@ namespace TEST2
         public Prova()
         {
             InitializeComponent();
+
             Size s = new Size(355, 489);
             Menu.Size = s;
             this.MaximizeBox = false;
@@ -27,6 +28,40 @@ namespace TEST2
             pictureQR.Visible = false;
             pages = returnAllNewPages();
             leaveOnlyLoginTab();
+
+            NomeUtente.GotFocus += RemoveTextUser;
+            NomeUtente.LostFocus += AddTextUser;
+            PasswordUtente.GotFocus += RemoveTextPass;
+            PasswordUtente.LostFocus += AddTextPass;
+            //this.ActiveControl = Tab_Utente;
+
+        }
+        private void RemoveTextPass(object sender, EventArgs e)
+        {
+            if (PasswordUtente.Text == "Password here")
+            {
+                PasswordUtente.Text = "";
+            }
+
+        }
+        private void RemoveTextUser(object sender, EventArgs e)
+        {
+            if (NomeUtente.Text == "Username here")
+            {
+                NomeUtente.Text = "";
+            }
+        }
+
+        private void AddTextPass(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(PasswordUtente.Text))
+                PasswordUtente.Text = "Password here";
+
+        }
+        private void AddTextUser(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(NomeUtente.Text))
+                NomeUtente.Text = "Username here";
         }
         private List<TabPage> returnAllNewPages()
         {
@@ -57,6 +92,7 @@ namespace TEST2
                     Menu.TabPages.Remove(tp);
                 }
             }
+
 
         }
         private void addAllPages()
@@ -125,7 +161,7 @@ namespace TEST2
             Menu.Size = s;
             addAllPages();
 
-        }        
+        }
 
         private void Prova_Load(object sender, EventArgs e)
         {
@@ -189,6 +225,19 @@ namespace TEST2
                 }
             }
             timerQR.Stop();
+        }
+
+        private void Prova_Shown(object sender, EventArgs e)
+        {           
+            PasswordUtente.Select();
+            NomeUtente.Select();
+            Error.Select();
+        
+        }
+
+        private void Tab_Utente_Click(object sender, EventArgs e)
+        {
+            Error.Select();
         }
     }
 }
