@@ -48,11 +48,12 @@ namespace TEST2
                     if (t == "true")
                     {
                         t = u.controlloConnessione();
-                        if (t == "true")
+                        if (t == "1")
                         {
-                            this.Hide();
-                            Menu f = new Menu();
-                            f.ShowDialog();
+                            /*  this.Hide();
+                              Menu f = new Menu();
+                              f.ShowDialog();*/
+                            MessageBox.Show("CHE CULO");
                         }
                         else
                         {
