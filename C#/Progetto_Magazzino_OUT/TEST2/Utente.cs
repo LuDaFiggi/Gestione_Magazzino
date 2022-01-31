@@ -54,8 +54,8 @@ namespace TEST2
                 //cmd.ExecuteNonQuery();
                 string i = dp.Tables[0].Rows[0]["accessi"].ToString();
 
-               
-                if(i!="1")
+
+                if (i != "1")
                 {
                     i = "Credenziali errate";
                 }
