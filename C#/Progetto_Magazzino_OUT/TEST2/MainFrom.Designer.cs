@@ -61,7 +61,7 @@ namespace TEST2
             // 
             // Menu
             // 
-            this.Menu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Menu.AutoSize = true;
             this.Menu.Location = new System.Drawing.Point(-2, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(0);
             this.Menu.Name = "Menu";
@@ -70,8 +70,8 @@ namespace TEST2
             this.Tab_Login,
             this.Tab_Ordine,
             this.Tab_GeneraQR});
-            this.Menu.SelectedIndex = 1;
-            this.Menu.Size = new System.Drawing.Size(1302, 523);
+            this.Menu.SelectedIndex = 0;
+            this.Menu.Size = new System.Drawing.Size(1312, 559);
             this.Menu.TabIndex = 0;
             this.Menu.Text = "kryptonNavigator1";
             // 
@@ -83,7 +83,7 @@ namespace TEST2
             this.Tab_Home.LastVisibleSet = true;
             this.Tab_Home.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Home.Name = "Tab_Home";
-            this.Tab_Home.Size = new System.Drawing.Size(1300, 496);
+            this.Tab_Home.Size = new System.Drawing.Size(1310, 532);
             this.Tab_Home.Text = "Home";
             this.Tab_Home.ToolTipTitle = "Page ToolTip";
             this.Tab_Home.UniqueName = "AF3FC12826C44E1E4EA9AD413ED1CD34";
@@ -114,9 +114,15 @@ namespace TEST2
             this.Tab_Login.Controls.Add(this.label1);
             this.Tab_Login.Flags = 65534;
             this.Tab_Login.LastVisibleSet = true;
+            this.Tab_Login.Margin = new System.Windows.Forms.Padding(0);
             this.Tab_Login.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Login.Name = "Tab_Login";
-            this.Tab_Login.Size = new System.Drawing.Size(1300, 496);
+            this.Tab_Login.Size = new System.Drawing.Size(1308, 532);
+            this.Tab_Login.StateCommon.Separator.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Tab_Login.StateCommon.Separator.Border.Rounding = 20;
+            this.Tab_Login.StateCommon.Separator.Border.Width = 1;
             this.Tab_Login.Text = "Login";
             this.Tab_Login.ToolTipTitle = "Page ToolTip";
             this.Tab_Login.UniqueName = "3BE15E851E9E4F8EF6A81647FBF6E1E5";
@@ -221,6 +227,7 @@ namespace TEST2
             this.kpt_btnLogin.StateTracking.Border.Width = 1;
             this.kpt_btnLogin.TabIndex = 42;
             this.kpt_btnLogin.Values.Text = "LOGIN";
+            this.kpt_btnLogin.Click += new System.EventHandler(this.kpt_btnLogin_Click);
             // 
             // pictureBox2
             // 
@@ -328,9 +335,8 @@ namespace TEST2
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainFrom";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainFrom";
+            this.Text = "x";
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).EndInit();
             this.Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Home)).EndInit();
@@ -344,6 +350,7 @@ namespace TEST2
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Ordine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

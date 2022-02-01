@@ -24,13 +24,31 @@ namespace TEST2
             InitializeComponent();
             Size s = new Size(355, 489);
             Menu.Size = s;
+            this.Size = s;
             this.MaximizeBox = false;
             u = new Utente();
             lastRes = null;
-           // pictureQR.Visible = false;          
+            // pictureQR.Visible = false;          
             leaveOnlyLoginTab();
             //kryptonTextBox1.GotFocus += RemoveTextUser;
             //kryptonTextBox1.LostFocus += AddTextUser;
+        }
+        /*
+        protected override void WndProc(ref Message m)
+        {
+            const int WN_NCCALCSIZE = 0x0083;
+            if (m.Msg == WN_NCCALCSIZE && m.WParam.ToInt32() == 1)
+            {
+                return;
+            }
+            base.WndProc(ref m);
+        }*/
+        private void showAllPages()
+        {
+            foreach (KryptonPage tp in Menu.Pages)
+            {
+                tp.Visible = true;
+            }
         }
         private void leaveOnlyLoginTab()
         {
@@ -44,6 +62,11 @@ namespace TEST2
             }
 
 
+        }
+
+        private void kpt_btnLogin_Click(object sender, EventArgs e)
+        {
+            showAllPages();
         }
     }
 }
