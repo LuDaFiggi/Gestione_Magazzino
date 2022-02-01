@@ -34,17 +34,17 @@ namespace TEST2
             this.Tab_Home = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pictureHome = new System.Windows.Forms.PictureBox();
             this.Tab_Login = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Tab_Ordine = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.Tab_GeneraQR = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kpt_btnLogin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Tab_Ordine = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.Tab_GeneraQR = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).BeginInit();
             this.Menu.SuspendLayout();
@@ -53,16 +53,17 @@ namespace TEST2
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Login)).BeginInit();
             this.Tab_Login.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Ordine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Menu
             // 
             this.Menu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Menu.Location = new System.Drawing.Point(-2, 0);
+            this.Menu.Margin = new System.Windows.Forms.Padding(0);
             this.Menu.Name = "Menu";
             this.Menu.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.Tab_Home,
@@ -82,7 +83,7 @@ namespace TEST2
             this.Tab_Home.LastVisibleSet = true;
             this.Tab_Home.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Home.Name = "Tab_Home";
-            this.Tab_Home.Size = new System.Drawing.Size(1310, 108);
+            this.Tab_Home.Size = new System.Drawing.Size(1300, 496);
             this.Tab_Home.Text = "Home";
             this.Tab_Home.ToolTipTitle = "Page ToolTip";
             this.Tab_Home.UniqueName = "AF3FC12826C44E1E4EA9AD413ED1CD34";
@@ -119,69 +120,6 @@ namespace TEST2
             this.Tab_Login.Text = "Login";
             this.Tab_Login.ToolTipTitle = "Page ToolTip";
             this.Tab_Login.UniqueName = "3BE15E851E9E4F8EF6A81647FBF6E1E5";
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Ribbon;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(-17, -46);
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(252, 35);
-            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.kryptonTextBox1.StateCommon.Border.Color1 = System.Drawing.Color.Black;
-            this.kryptonTextBox1.StateCommon.Border.Color2 = System.Drawing.Color.Black;
-            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox1.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kryptonTextBox1.StateCommon.Border.Rounding = 20;
-            this.kryptonTextBox1.StateCommon.Border.Width = 1;
-            this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.Black;
-            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.kryptonTextBox1.TabIndex = 38;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-17, -188);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 78);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-13, -70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 21);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Nome utente:";
-            // 
-            // Tab_Ordine
-            // 
-            this.Tab_Ordine.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.Tab_Ordine.Flags = 65534;
-            this.Tab_Ordine.LastVisibleSet = true;
-            this.Tab_Ordine.MinimumSize = new System.Drawing.Size(50, 50);
-            this.Tab_Ordine.Name = "Tab_Ordine";
-            this.Tab_Ordine.Size = new System.Drawing.Size(248, 52);
-            this.Tab_Ordine.Text = "Ordine";
-            this.Tab_Ordine.ToolTipTitle = "Page ToolTip";
-            this.Tab_Ordine.UniqueName = "C7611F491F4F4A19B2B21C6EA4886161";
-            // 
-            // Tab_GeneraQR
-            // 
-            this.Tab_GeneraQR.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.Tab_GeneraQR.Flags = 65534;
-            this.Tab_GeneraQR.LastVisibleSet = true;
-            this.Tab_GeneraQR.MinimumSize = new System.Drawing.Size(50, 50);
-            this.Tab_GeneraQR.Name = "Tab_GeneraQR";
-            this.Tab_GeneraQR.Size = new System.Drawing.Size(249, 52);
-            this.Tab_GeneraQR.Text = "GeneraQR";
-            this.Tab_GeneraQR.ToolTipTitle = "Page ToolTip";
-            this.Tab_GeneraQR.UniqueName = "120C7BFAEFE6477DF2A1838524606597";
             // 
             // kryptonTextBox2
             // 
@@ -286,6 +224,7 @@ namespace TEST2
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(53, 25);
             this.pictureBox2.Name = "pictureBox2";
@@ -296,6 +235,7 @@ namespace TEST2
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(57, 240);
             this.label2.Name = "label2";
@@ -306,12 +246,76 @@ namespace TEST2
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(57, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 21);
             this.label3.TabIndex = 39;
             this.label3.Text = "Nome utente:";
+            // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Ribbon;
+            this.kryptonTextBox1.Location = new System.Drawing.Point(-17, -46);
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(252, 35);
+            this.kryptonTextBox1.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox1.StateCommon.Border.Color1 = System.Drawing.Color.Black;
+            this.kryptonTextBox1.StateCommon.Border.Color2 = System.Drawing.Color.Black;
+            this.kryptonTextBox1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox1.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.kryptonTextBox1.StateCommon.Border.Rounding = 20;
+            this.kryptonTextBox1.StateCommon.Border.Width = 1;
+            this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.Color.Black;
+            this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox1.TabIndex = 38;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-17, -188);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 78);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-13, -70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 21);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Nome utente:";
+            // 
+            // Tab_Ordine
+            // 
+            this.Tab_Ordine.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.Tab_Ordine.Flags = 65534;
+            this.Tab_Ordine.LastVisibleSet = true;
+            this.Tab_Ordine.MinimumSize = new System.Drawing.Size(50, 50);
+            this.Tab_Ordine.Name = "Tab_Ordine";
+            this.Tab_Ordine.Size = new System.Drawing.Size(1300, 496);
+            this.Tab_Ordine.Text = "Ordine";
+            this.Tab_Ordine.ToolTipTitle = "Page ToolTip";
+            this.Tab_Ordine.UniqueName = "C7611F491F4F4A19B2B21C6EA4886161";
+            // 
+            // Tab_GeneraQR
+            // 
+            this.Tab_GeneraQR.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.Tab_GeneraQR.Flags = 65534;
+            this.Tab_GeneraQR.LastVisibleSet = true;
+            this.Tab_GeneraQR.MinimumSize = new System.Drawing.Size(50, 50);
+            this.Tab_GeneraQR.Name = "Tab_GeneraQR";
+            this.Tab_GeneraQR.Size = new System.Drawing.Size(1300, 496);
+            this.Tab_GeneraQR.Text = "GeneraQR";
+            this.Tab_GeneraQR.ToolTipTitle = "Page ToolTip";
+            this.Tab_GeneraQR.UniqueName = "120C7BFAEFE6477DF2A1838524606597";
             // 
             // MainFrom
             // 
@@ -335,10 +339,10 @@ namespace TEST2
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Login)).EndInit();
             this.Tab_Login.ResumeLayout(false);
             this.Tab_Login.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Ordine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
