@@ -46,7 +46,6 @@ namespace TEST2
             this.label1 = new System.Windows.Forms.Label();
             this.Tab_Ordine = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.Tab_GeneraQR = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.lblReaded = new System.Windows.Forms.Label();
             this.pictureQR = new System.Windows.Forms.PictureBox();
             this.comboCam = new System.Windows.Forms.ComboBox();
@@ -70,17 +69,31 @@ namespace TEST2
             // 
             // Menu
             // 
-            this.Menu.AutoSize = true;
+            this.Menu.Bar.BarOrientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left;
+            this.Menu.Bar.ItemAlignment = ComponentFactory.Krypton.Toolkit.RelativePositionAlign.Center;
+            this.Menu.Bar.ItemOrientation = ComponentFactory.Krypton.Toolkit.ButtonOrientation.FixedTop;
+            this.Menu.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameWidthAndHeight;
+            this.Menu.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
+            this.Menu.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
+            this.Menu.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.Menu.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
+            this.Menu.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.InputControlRibbon;
             this.Menu.Location = new System.Drawing.Point(-2, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(0);
             this.Menu.Name = "Menu";
+            this.Menu.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarRibbonTabGroup;
+            this.Menu.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.TabDockAutoHidden;
             this.Menu.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.Tab_Home,
             this.Tab_Login,
             this.Tab_Ordine,
             this.Tab_GeneraQR});
             this.Menu.SelectedIndex = 1;
-            this.Menu.Size = new System.Drawing.Size(1312, 559);
+            this.Menu.Size = new System.Drawing.Size(1298, 540);
+            this.Menu.Stack.StackAlignment = ComponentFactory.Krypton.Toolkit.RelativePositionAlign.Near;
+            this.Menu.StateCommon.Panel.Color1 = System.Drawing.Color.RoyalBlue;
+            this.Menu.StateCommon.Panel.Color2 = System.Drawing.Color.Yellow;
+            this.Menu.StateCommon.Panel.ColorAngle = 45F;
             this.Menu.TabIndex = 0;
             this.Menu.Text = "kryptonNavigator1";
             // 
@@ -92,7 +105,7 @@ namespace TEST2
             this.Tab_Home.LastVisibleSet = true;
             this.Tab_Home.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Home.Name = "Tab_Home";
-            this.Tab_Home.Size = new System.Drawing.Size(1310, 532);
+            this.Tab_Home.Size = new System.Drawing.Size(1227, 557);
             this.Tab_Home.Text = "Home";
             this.Tab_Home.ToolTipTitle = "Page ToolTip";
             this.Tab_Home.UniqueName = "AF3FC12826C44E1E4EA9AD413ED1CD34";
@@ -127,7 +140,7 @@ namespace TEST2
             this.Tab_Login.Margin = new System.Windows.Forms.Padding(0);
             this.Tab_Login.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Login.Name = "Tab_Login";
-            this.Tab_Login.Size = new System.Drawing.Size(1310, 532);
+            this.Tab_Login.Size = new System.Drawing.Size(1227, 538);
             this.Tab_Login.StateCommon.Separator.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -321,7 +334,7 @@ namespace TEST2
             this.Tab_Ordine.LastVisibleSet = true;
             this.Tab_Ordine.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Ordine.Name = "Tab_Ordine";
-            this.Tab_Ordine.Size = new System.Drawing.Size(1310, 532);
+            this.Tab_Ordine.Size = new System.Drawing.Size(1228, 557);
             this.Tab_Ordine.Text = "Ordine";
             this.Tab_Ordine.ToolTipTitle = "Page ToolTip";
             this.Tab_Ordine.UniqueName = "C7611F491F4F4A19B2B21C6EA4886161";
@@ -333,7 +346,7 @@ namespace TEST2
             this.Tab_GeneraQR.LastVisibleSet = true;
             this.Tab_GeneraQR.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_GeneraQR.Name = "Tab_GeneraQR";
-            this.Tab_GeneraQR.Size = new System.Drawing.Size(1310, 532);
+            this.Tab_GeneraQR.Size = new System.Drawing.Size(1225, 557);
             this.Tab_GeneraQR.Text = "GeneraQR";
             this.Tab_GeneraQR.ToolTipTitle = "Page ToolTip";
             this.Tab_GeneraQR.UniqueName = "120C7BFAEFE6477DF2A1838524606597";
@@ -392,12 +405,25 @@ namespace TEST2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Lime;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1294, 535);
             this.Controls.Add(this.Menu);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainFrom";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StateCommon.Back.Color1 = System.Drawing.Color.RoyalBlue;
+            this.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Sigma;
+            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.StateCommon.Header.Back.Color1 = System.Drawing.Color.RoyalBlue;
+            this.StateCommon.Header.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.StateCommon.Header.Border.Color1 = System.Drawing.Color.RoyalBlue;
+            this.StateCommon.Header.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.Text = "x";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -417,7 +443,6 @@ namespace TEST2
             ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureQR)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -438,7 +463,6 @@ namespace TEST2
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lblReaded;
         private System.Windows.Forms.PictureBox pictureQR;
         private System.Windows.Forms.ComboBox comboCam;

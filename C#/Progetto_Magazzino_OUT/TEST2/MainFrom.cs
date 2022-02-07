@@ -32,7 +32,7 @@ namespace TEST2
             this.MaximizeBox = false;
             u = new Utente();
             lastRes = null;
-            pictureQR.Visible = false;          
+            pictureQR.Visible = false;
             leaveOnlyLoginTab();
             kryptonTextBox2.GotFocus += RemoveTextUser;
             kryptonTextBox2.LostFocus += AddTextUser;
@@ -48,7 +48,7 @@ namespace TEST2
         {
             if (string.IsNullOrWhiteSpace(kryptonTextBox2.Text))
                 kryptonTextBox2.Text = "Username here";
-        }     
+        }
         private void leaveOnlyLoginTab()
         {
             foreach (KryptonPage tp in Menu.Pages)
@@ -69,7 +69,7 @@ namespace TEST2
                 tp.Visible = true;
             }
         }
-       
+
         private void Errore(string t)
         {
             timer.Enabled = false;
@@ -103,11 +103,18 @@ namespace TEST2
             }
             base.WndProc(ref m);
         }*/
-         
+
 
         private void kpt_btnLogin_Click(object sender, EventArgs e)
         {
             showAllPages();
+            Test();
+        }
+        private void Test()
+        {
+            //this.Size = new Size(1298, 559);
+            Menu.Size = new Size(1298, 559);
+
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -117,14 +124,14 @@ namespace TEST2
                 comboCam.Items.Add(temp.Name);
                 comboCam.SelectedIndex = 0;
             }
-        }       
+        }
 
         private void Cam_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             pictureQR.Image = (Bitmap)eventArgs.Frame.Clone();
 
         }
-      
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (cam != null)
@@ -136,7 +143,7 @@ namespace TEST2
             }
             timerQR.Stop();
         }
-       
+
         private void comboCam_SelectionChangeCommitted(object sender, EventArgs e)
         {
             cam = new VideoCaptureDevice(filtercollection[comboCam.SelectedIndex].MonikerString);
