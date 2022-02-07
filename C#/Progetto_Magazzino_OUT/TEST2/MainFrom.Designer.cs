@@ -29,6 +29,7 @@ namespace TEST2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrom));
             this.Menu = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.Tab_Home = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -46,6 +47,12 @@ namespace TEST2
             this.Tab_Ordine = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.Tab_GeneraQR = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lblReaded = new System.Windows.Forms.Label();
+            this.pictureQR = new System.Windows.Forms.PictureBox();
+            this.comboCam = new System.Windows.Forms.ComboBox();
+            this.timerQR = new System.Windows.Forms.Timer(this.components);
+            this.Error = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).BeginInit();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Home)).BeginInit();
@@ -56,7 +63,9 @@ namespace TEST2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Ordine)).BeginInit();
+            this.Tab_Ordine.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureQR)).BeginInit();
             this.SuspendLayout();
             // 
             // Menu
@@ -70,7 +79,7 @@ namespace TEST2
             this.Tab_Login,
             this.Tab_Ordine,
             this.Tab_GeneraQR});
-            this.Menu.SelectedIndex = 0;
+            this.Menu.SelectedIndex = 1;
             this.Menu.Size = new System.Drawing.Size(1312, 559);
             this.Menu.TabIndex = 0;
             this.Menu.Text = "kryptonNavigator1";
@@ -103,6 +112,7 @@ namespace TEST2
             // Tab_Login
             // 
             this.Tab_Login.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.Tab_Login.Controls.Add(this.Error);
             this.Tab_Login.Controls.Add(this.kryptonTextBox2);
             this.Tab_Login.Controls.Add(this.kryptonTextBox3);
             this.Tab_Login.Controls.Add(this.kpt_btnLogin);
@@ -117,7 +127,7 @@ namespace TEST2
             this.Tab_Login.Margin = new System.Windows.Forms.Padding(0);
             this.Tab_Login.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Login.Name = "Tab_Login";
-            this.Tab_Login.Size = new System.Drawing.Size(1308, 532);
+            this.Tab_Login.Size = new System.Drawing.Size(1310, 532);
             this.Tab_Login.StateCommon.Separator.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -126,6 +136,7 @@ namespace TEST2
             this.Tab_Login.Text = "Login";
             this.Tab_Login.ToolTipTitle = "Page ToolTip";
             this.Tab_Login.UniqueName = "3BE15E851E9E4F8EF6A81647FBF6E1E5";
+            this.Tab_Login.Click += new System.EventHandler(this.Tab_Utente_Click);
             // 
             // kryptonTextBox2
             // 
@@ -303,11 +314,14 @@ namespace TEST2
             // Tab_Ordine
             // 
             this.Tab_Ordine.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.Tab_Ordine.Controls.Add(this.lblReaded);
+            this.Tab_Ordine.Controls.Add(this.pictureQR);
+            this.Tab_Ordine.Controls.Add(this.comboCam);
             this.Tab_Ordine.Flags = 65534;
             this.Tab_Ordine.LastVisibleSet = true;
             this.Tab_Ordine.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Ordine.Name = "Tab_Ordine";
-            this.Tab_Ordine.Size = new System.Drawing.Size(1300, 496);
+            this.Tab_Ordine.Size = new System.Drawing.Size(1310, 532);
             this.Tab_Ordine.Text = "Ordine";
             this.Tab_Ordine.ToolTipTitle = "Page ToolTip";
             this.Tab_Ordine.UniqueName = "C7611F491F4F4A19B2B21C6EA4886161";
@@ -319,10 +333,58 @@ namespace TEST2
             this.Tab_GeneraQR.LastVisibleSet = true;
             this.Tab_GeneraQR.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_GeneraQR.Name = "Tab_GeneraQR";
-            this.Tab_GeneraQR.Size = new System.Drawing.Size(1300, 496);
+            this.Tab_GeneraQR.Size = new System.Drawing.Size(1310, 532);
             this.Tab_GeneraQR.Text = "GeneraQR";
             this.Tab_GeneraQR.ToolTipTitle = "Page ToolTip";
             this.Tab_GeneraQR.UniqueName = "120C7BFAEFE6477DF2A1838524606597";
+            // 
+            // lblReaded
+            // 
+            this.lblReaded.AutoEllipsis = true;
+            this.lblReaded.BackColor = System.Drawing.Color.Transparent;
+            this.lblReaded.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblReaded.Location = new System.Drawing.Point(38, 8);
+            this.lblReaded.Name = "lblReaded";
+            this.lblReaded.Size = new System.Drawing.Size(245, 516);
+            this.lblReaded.TabIndex = 10;
+            // 
+            // pictureQR
+            // 
+            this.pictureQR.BackColor = System.Drawing.Color.Transparent;
+            this.pictureQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureQR.Location = new System.Drawing.Point(326, 35);
+            this.pictureQR.Name = "pictureQR";
+            this.pictureQR.Size = new System.Drawing.Size(946, 483);
+            this.pictureQR.TabIndex = 9;
+            this.pictureQR.TabStop = false;
+            // 
+            // comboCam
+            // 
+            this.comboCam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboCam.FormattingEnabled = true;
+            this.comboCam.Location = new System.Drawing.Point(326, 8);
+            this.comboCam.Name = "comboCam";
+            this.comboCam.Size = new System.Drawing.Size(386, 21);
+            this.comboCam.TabIndex = 8;
+            this.comboCam.SelectionChangeCommitted += new System.EventHandler(this.comboCam_SelectionChangeCommitted);
+            // 
+            // timerQR
+            // 
+            this.timerQR.Interval = 500;
+            this.timerQR.Tick += new System.EventHandler(this.timerQR_Tick);
+            // 
+            // Error
+            // 
+            this.Error.BackColor = System.Drawing.Color.Transparent;
+            this.Error.Location = new System.Drawing.Point(53, 415);
+            this.Error.Name = "Error";
+            this.Error.Size = new System.Drawing.Size(252, 36);
+            this.Error.TabIndex = 46;
+            this.Error.Visible = false;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 3000;
             // 
             // MainFrom
             // 
@@ -337,6 +399,9 @@ namespace TEST2
             this.Name = "MainFrom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "x";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).EndInit();
             this.Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Home)).EndInit();
@@ -348,7 +413,9 @@ namespace TEST2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Ordine)).EndInit();
+            this.Tab_Ordine.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureQR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +439,11 @@ namespace TEST2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label lblReaded;
+        private System.Windows.Forms.PictureBox pictureQR;
+        private System.Windows.Forms.ComboBox comboCam;
+        private System.Windows.Forms.Timer timerQR;
+        private System.Windows.Forms.Label Error;
+        private System.Windows.Forms.Timer timer;
     }
 }

@@ -27,8 +27,7 @@ namespace TEST2
             this.MaximizeBox = false;
             u = new Utente();
             lastRes = null;
-            pictureQR.Visible = false;
-            pages = returnAllNewPages();
+            pictureQR.Visible = false;            
             leaveOnlyLoginTab();
 
             kryptonTextBox1.GotFocus += RemoveTextUser;
@@ -61,17 +60,7 @@ namespace TEST2
         {
             if (string.IsNullOrWhiteSpace(kryptonTextBox1.Text))
                 kryptonTextBox1.Text = "Username here";
-        }
-        private List<TabPage> returnAllNewPages()
-        {
-            //metodo terribile
-            List<TabPage> pages = new List<TabPage>();
-            pages.Add(Tab_Home);
-            pages.Add(Tab_Utente);
-            pages.Add(Tab_QR);
-            pages.Add(Tab_GeneraQR);
-            return pages;
-        }
+        }       
         private void Errore(string t)
         {
             timer.Enabled = false;

@@ -179,11 +179,6 @@ D:\SALA\OWO-OnlineWarehouseOrganization-main\C#\Progetto_Magazzino_OUT\TEST2\obj
 D:\SALA\OWO-OnlineWarehouseOrganization-main\C#\Progetto_Magazzino_OUT\TEST2\obj\Debug\TEST2.csproj.CopyComplete
 D:\SALA\OWO-OnlineWarehouseOrganization-main\C#\Progetto_Magazzino_OUT\TEST2\obj\Debug\TEST2.exe
 D:\SALA\OWO-OnlineWarehouseOrganization-main\C#\Progetto_Magazzino_OUT\TEST2\obj\Debug\TEST2.pdb
-C:\Users\samum\Documents\GitHub\OWO-OnlineWarehouseOrganization\C#\Progetto_Magazzino_OUT\TEST2\bin\Debug\ComponentFactory.Krypton.Docking.dll
-C:\Users\samum\Documents\GitHub\OWO-OnlineWarehouseOrganization\C#\Progetto_Magazzino_OUT\TEST2\bin\Debug\ComponentFactory.Krypton.Navigator.dll
-C:\Users\samum\Documents\GitHub\OWO-OnlineWarehouseOrganization\C#\Progetto_Magazzino_OUT\TEST2\bin\Debug\ComponentFactory.Krypton.Ribbon.dll
-C:\Users\samum\Documents\GitHub\OWO-OnlineWarehouseOrganization\C#\Progetto_Magazzino_OUT\TEST2\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
-C:\Users\samum\Documents\GitHub\OWO-OnlineWarehouseOrganization\C#\Progetto_Magazzino_OUT\TEST2\bin\Debug\ComponentFactory.Krypton.Workspace.dll
 C:\Users\samum\Documents\GitHub\OWO-OnlineWarehouseOrganization\C#\Progetto_Magazzino_OUT\TEST2\bin\Debug\ComponentFactory.Krypton.Docking.pdb
 C:\Users\samum\Documents\GitHub\OWO-OnlineWarehouseOrganization\C#\Progetto_Magazzino_OUT\TEST2\bin\Debug\ComponentFactory.Krypton.Navigator.pdb
 C:\Users\samum\Documents\GitHub\OWO-OnlineWarehouseOrganization\C#\Progetto_Magazzino_OUT\TEST2\bin\Debug\ComponentFactory.Krypton.Ribbon.pdb
