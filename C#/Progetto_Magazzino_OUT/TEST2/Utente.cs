@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,30 +39,22 @@ namespace TEST2
         //contro per vericare se si inserisce un utente esistene
         public string controlloConnessione()
         {
+            string i = "";
             try
             {
-                this.MyConnectionString = "Server=localhost;Database=db5c;Uid=root;Pwd=;";
-                // this.MyConnectionString = "Server=localhost;Database=progetto;Uid=" + this.nome + ";Pwd=" + this.password + ";";
-                MySqlConnection connection = new MySqlConnection(MyConnectionString);
-                connection.Open();
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://ilsitodifacc.altervista.org/?METHOD_=POST&DATO=Login$nome=" + this.nome + "&pass=" + this.password);
 
-                MySqlCommand cmd = new MySqlCommand("AccessoDatabase", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("Var_nome", nome);
-                cmd.Parameters.AddWithValue("Var_pass", password);
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                DataSet dp = new DataSet();
-                da.Fill(dp);
-                //cmd.ExecuteNonQuery();
-                string i = dp.Tables[0].Rows[0]["accessi"].ToString();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                StreamReader input = new StreamReader(response.GetResponseStream());
+
+                DataSet dsTest = new DataSet();
+                dsTest.ReadXml(input);
 
 
-                if (i != "1")
-                {
-                    i = "Credenziali errate";
-                }
-                connection.Close();
+
+
                 return i;
+
             }
             catch (Exception ex)
             {

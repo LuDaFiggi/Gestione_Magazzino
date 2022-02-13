@@ -11,7 +11,10 @@ using ComponentFactory.Krypton.Navigator;
 using ComponentFactory.Krypton.Ribbon;
 using ComponentFactory.Krypton.Workspace;
 using ComponentFactory.Krypton.Docking;
-
+using System.Net;
+using System.IO;
+using System.Data;
+using System.Xml;
 
 namespace TEST2
 {
@@ -23,10 +26,11 @@ namespace TEST2
         Result lastRes;
         List<TabPage> pages;
         AutoCompleteStringCollection userHistory = new AutoCompleteStringCollection();
+        Login l;
         public MainFrom()
         {
             InitializeComponent();
-            Size s = new Size(355, 489);
+            Size s = new Size(400, 489);
             Menu.Size = s;
             this.Size = s;
             this.MaximizeBox = false;
@@ -35,7 +39,7 @@ namespace TEST2
             pictureQR.Visible = false;
             leaveOnlyLoginTab();
             kryptonTextBox2.GotFocus += RemoveTextUser;
-            kryptonTextBox2.LostFocus += AddTextUser;
+            kryptonTextBox2.LostFocus += AddTextUser;          
         }
         private void RemoveTextUser(object sender, EventArgs e)
         {
@@ -84,10 +88,6 @@ namespace TEST2
             Error.Visible = false;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -109,11 +109,13 @@ namespace TEST2
         {
             showAllPages();
             Test();
+
         }
         private void Test()
         {
             //this.Size = new Size(1298, 559);
-            Menu.Size = new Size(1298, 559);
+            Menu.Size = new Size(1920, 1080);
+
 
         }
         private void MainForm_Load(object sender, EventArgs e)
@@ -123,6 +125,72 @@ namespace TEST2
             {
                 comboCam.Items.Add(temp.Name);
                 comboCam.SelectedIndex = 0;
+            }
+        }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (kryptonTextBox2.Text == "")
+                {
+                    MessageBox.Show("Nome utente non inserito", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    userHistory.Add(kryptonTextBox2.Text);
+                    string t = u.popolaDati(kryptonTextBox2.Text, kryptonTextBox3.Text);
+                    if (t == "true")
+                    {
+                        t = controlloConnessione();
+                        if (t == "true")
+                        {
+
+                            showAllPages();
+                            Test();
+                        }
+                        else
+                        {
+
+                            Errore(t);
+                        }
+                    }
+                    else
+                    {
+                        Errore(t);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Errore(ex.Message);
+            }
+        }
+
+        public string controlloConnessione()
+        {
+            string i = "true";
+            try
+            {
+                string f = "http://ilsitodifacc.altervista.org/?METHOD_=POST&DATO=Login&nome=" + this.kryptonTextBox2.Text + "&pass=" + this.kryptonTextBox3.Text;
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(f);
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                StreamReader input = new StreamReader(response.GetResponseStream());
+
+                DataSet dsTest = new DataSet();
+                dsTest.ReadXml(input);
+
+                dataGridView1.DataSource = dsTest.Tables[0];
+                //come cazzo si fa
+                //i = dsTest.Tables[0].Rows[0];
+
+                return i;
+            }
+            catch (Exception Except)
+            {
+                MessageBox.Show(Except.ToString());
+                return i;
             }
         }
 
@@ -261,6 +329,11 @@ namespace TEST2
         private void Tab_Utente_Click(object sender, EventArgs e)
         {
             Error.Select();
+        }
+
+        private void MainFrom_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -16,7 +16,10 @@ namespace TEST2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainFrom());
+            Login l = new Login();
+            l.Show();
+            Application.Run();
+           
         }
     }
 }

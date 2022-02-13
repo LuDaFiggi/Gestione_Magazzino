@@ -35,6 +35,8 @@ namespace TEST2
             this.Tab_Home = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pictureHome = new System.Windows.Forms.PictureBox();
             this.Tab_Login = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Error = new System.Windows.Forms.Label();
             this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kpt_btnLogin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -45,12 +47,11 @@ namespace TEST2
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Tab_Ordine = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.Tab_GeneraQR = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.lblReaded = new System.Windows.Forms.Label();
             this.pictureQR = new System.Windows.Forms.PictureBox();
             this.comboCam = new System.Windows.Forms.ComboBox();
+            this.Tab_GeneraQR = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.timerQR = new System.Windows.Forms.Timer(this.components);
-            this.Error = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).BeginInit();
             this.Menu.SuspendLayout();
@@ -59,29 +60,37 @@ namespace TEST2
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Login)).BeginInit();
             this.Tab_Login.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Ordine)).BeginInit();
             this.Tab_Ordine.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureQR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).BeginInit();
             this.SuspendLayout();
             // 
             // Menu
             // 
             this.Menu.Bar.BarOrientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left;
-            this.Menu.Bar.ItemAlignment = ComponentFactory.Krypton.Toolkit.RelativePositionAlign.Center;
+            this.Menu.Bar.ItemMinimumSize = new System.Drawing.Size(20, 40);
             this.Menu.Bar.ItemOrientation = ComponentFactory.Krypton.Toolkit.ButtonOrientation.FixedTop;
             this.Menu.Bar.ItemSizing = ComponentFactory.Krypton.Navigator.BarItemSizing.SameWidthAndHeight;
+            this.Menu.Bar.TabBorderStyle = ComponentFactory.Krypton.Toolkit.TabBorderStyle.SquareEqualSmall;
             this.Menu.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
             this.Menu.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.Menu.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.Menu.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridHeaderColumnSheet;
-            this.Menu.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.InputControlRibbon;
+            this.Menu.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.InputControlStandalone;
+            this.Menu.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonStandalone;
             this.Menu.Location = new System.Drawing.Point(-2, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(0);
             this.Menu.Name = "Menu";
             this.Menu.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarRibbonTabGroup;
+            this.Menu.OverrideFocus.RibbonTab.TabDraw.BackColor1 = System.Drawing.Color.Transparent;
+            this.Menu.OverrideFocus.RibbonTab.TabDraw.BackColor2 = System.Drawing.Color.Transparent;
+            this.Menu.OverrideFocus.RibbonTab.TabDraw.BackColor3 = System.Drawing.Color.Transparent;
+            this.Menu.OverrideFocus.RibbonTab.TabDraw.BackColor4 = System.Drawing.Color.Transparent;
+            this.Menu.OverrideFocus.RibbonTab.TabDraw.BackColor5 = System.Drawing.Color.Transparent;
+            this.Menu.OverrideFocus.RibbonTab.TabDraw.TextColor = System.Drawing.Color.Black;
             this.Menu.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.TabDockAutoHidden;
             this.Menu.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.Tab_Home,
@@ -89,11 +98,23 @@ namespace TEST2
             this.Tab_Ordine,
             this.Tab_GeneraQR});
             this.Menu.SelectedIndex = 1;
-            this.Menu.Size = new System.Drawing.Size(1298, 540);
+            this.Menu.Size = new System.Drawing.Size(1913, 1042);
             this.Menu.Stack.StackAlignment = ComponentFactory.Krypton.Toolkit.RelativePositionAlign.Near;
             this.Menu.StateCommon.Panel.Color1 = System.Drawing.Color.RoyalBlue;
-            this.Menu.StateCommon.Panel.Color2 = System.Drawing.Color.Yellow;
+            this.Menu.StateCommon.Panel.Color2 = System.Drawing.Color.White;
             this.Menu.StateCommon.Panel.ColorAngle = 45F;
+            this.Menu.StateCommon.RibbonTab.TabDraw.TextColor = System.Drawing.Color.White;
+            this.Menu.StateSelected.CheckButton.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Menu.StateSelected.CheckButton.Border.Rounding = 20;
+            this.Menu.StateSelected.RibbonTab.TabDraw.TextColor = System.Drawing.Color.Black;
+            this.Menu.StateTracking.RibbonTab.TabDraw.BackColor1 = System.Drawing.Color.White;
+            this.Menu.StateTracking.RibbonTab.TabDraw.BackColor2 = System.Drawing.Color.White;
+            this.Menu.StateTracking.RibbonTab.TabDraw.BackColor3 = System.Drawing.Color.White;
+            this.Menu.StateTracking.RibbonTab.TabDraw.BackColor4 = System.Drawing.Color.White;
+            this.Menu.StateTracking.RibbonTab.TabDraw.BackColor5 = System.Drawing.Color.White;
+            this.Menu.StateTracking.RibbonTab.TabDraw.TextColor = System.Drawing.Color.Black;
             this.Menu.TabIndex = 0;
             this.Menu.Text = "kryptonNavigator1";
             // 
@@ -105,7 +126,14 @@ namespace TEST2
             this.Tab_Home.LastVisibleSet = true;
             this.Tab_Home.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Home.Name = "Tab_Home";
-            this.Tab_Home.Size = new System.Drawing.Size(1227, 557);
+            this.Tab_Home.OverrideFocus.RibbonTab.TabDraw.BackColor1 = System.Drawing.Color.Transparent;
+            this.Tab_Home.OverrideFocus.RibbonTab.TabDraw.BackColor2 = System.Drawing.Color.Transparent;
+            this.Tab_Home.OverrideFocus.RibbonTab.TabDraw.BackColor3 = System.Drawing.Color.Transparent;
+            this.Tab_Home.OverrideFocus.RibbonTab.TabDraw.BackColor4 = System.Drawing.Color.Transparent;
+            this.Tab_Home.OverrideFocus.RibbonTab.TabDraw.BackColor5 = System.Drawing.Color.Transparent;
+            this.Tab_Home.OverrideFocus.RibbonTab.TabDraw.TextColor = System.Drawing.Color.Black;
+            this.Tab_Home.Size = new System.Drawing.Size(1840, 1038);
+            this.Tab_Home.StateSelected.RibbonTab.TabDraw.BackColor5 = System.Drawing.Color.Black;
             this.Tab_Home.Text = "Home";
             this.Tab_Home.ToolTipTitle = "Page ToolTip";
             this.Tab_Home.UniqueName = "AF3FC12826C44E1E4EA9AD413ED1CD34";
@@ -115,9 +143,9 @@ namespace TEST2
             this.pictureHome.BackColor = System.Drawing.Color.White;
             this.pictureHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureHome.Image = global::TEST2.Properties.Resources.Logo;
-            this.pictureHome.Location = new System.Drawing.Point(2, 0);
+            this.pictureHome.Location = new System.Drawing.Point(3, 0);
             this.pictureHome.Name = "pictureHome";
-            this.pictureHome.Size = new System.Drawing.Size(1305, 103);
+            this.pictureHome.Size = new System.Drawing.Size(1834, 133);
             this.pictureHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureHome.TabIndex = 21;
             this.pictureHome.TabStop = false;
@@ -125,6 +153,7 @@ namespace TEST2
             // Tab_Login
             // 
             this.Tab_Login.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.Tab_Login.Controls.Add(this.dataGridView1);
             this.Tab_Login.Controls.Add(this.Error);
             this.Tab_Login.Controls.Add(this.kryptonTextBox2);
             this.Tab_Login.Controls.Add(this.kryptonTextBox3);
@@ -140,7 +169,7 @@ namespace TEST2
             this.Tab_Login.Margin = new System.Windows.Forms.Padding(0);
             this.Tab_Login.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Login.Name = "Tab_Login";
-            this.Tab_Login.Size = new System.Drawing.Size(1227, 538);
+            this.Tab_Login.Size = new System.Drawing.Size(1840, 1038);
             this.Tab_Login.StateCommon.Separator.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -150,6 +179,23 @@ namespace TEST2
             this.Tab_Login.ToolTipTitle = "Page ToolTip";
             this.Tab_Login.UniqueName = "3BE15E851E9E4F8EF6A81647FBF6E1E5";
             this.Tab_Login.Click += new System.EventHandler(this.Tab_Utente_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(487, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(654, 309);
+            this.dataGridView1.TabIndex = 47;
+            // 
+            // Error
+            // 
+            this.Error.BackColor = System.Drawing.Color.Transparent;
+            this.Error.Location = new System.Drawing.Point(53, 415);
+            this.Error.Name = "Error";
+            this.Error.Size = new System.Drawing.Size(252, 36);
+            this.Error.TabIndex = 46;
+            this.Error.Visible = false;
             // 
             // kryptonTextBox2
             // 
@@ -334,22 +380,10 @@ namespace TEST2
             this.Tab_Ordine.LastVisibleSet = true;
             this.Tab_Ordine.MinimumSize = new System.Drawing.Size(50, 50);
             this.Tab_Ordine.Name = "Tab_Ordine";
-            this.Tab_Ordine.Size = new System.Drawing.Size(1228, 557);
+            this.Tab_Ordine.Size = new System.Drawing.Size(1840, 1038);
             this.Tab_Ordine.Text = "Ordine";
             this.Tab_Ordine.ToolTipTitle = "Page ToolTip";
             this.Tab_Ordine.UniqueName = "C7611F491F4F4A19B2B21C6EA4886161";
-            // 
-            // Tab_GeneraQR
-            // 
-            this.Tab_GeneraQR.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.Tab_GeneraQR.Flags = 65534;
-            this.Tab_GeneraQR.LastVisibleSet = true;
-            this.Tab_GeneraQR.MinimumSize = new System.Drawing.Size(50, 50);
-            this.Tab_GeneraQR.Name = "Tab_GeneraQR";
-            this.Tab_GeneraQR.Size = new System.Drawing.Size(1225, 557);
-            this.Tab_GeneraQR.Text = "GeneraQR";
-            this.Tab_GeneraQR.ToolTipTitle = "Page ToolTip";
-            this.Tab_GeneraQR.UniqueName = "120C7BFAEFE6477DF2A1838524606597";
             // 
             // lblReaded
             // 
@@ -381,19 +415,22 @@ namespace TEST2
             this.comboCam.TabIndex = 8;
             this.comboCam.SelectionChangeCommitted += new System.EventHandler(this.comboCam_SelectionChangeCommitted);
             // 
+            // Tab_GeneraQR
+            // 
+            this.Tab_GeneraQR.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.Tab_GeneraQR.Flags = 65534;
+            this.Tab_GeneraQR.LastVisibleSet = true;
+            this.Tab_GeneraQR.MinimumSize = new System.Drawing.Size(50, 50);
+            this.Tab_GeneraQR.Name = "Tab_GeneraQR";
+            this.Tab_GeneraQR.Size = new System.Drawing.Size(1840, 1038);
+            this.Tab_GeneraQR.Text = "GeneraQR";
+            this.Tab_GeneraQR.ToolTipTitle = "Page ToolTip";
+            this.Tab_GeneraQR.UniqueName = "120C7BFAEFE6477DF2A1838524606597";
+            // 
             // timerQR
             // 
             this.timerQR.Interval = 500;
             this.timerQR.Tick += new System.EventHandler(this.timerQR_Tick);
-            // 
-            // Error
-            // 
-            this.Error.BackColor = System.Drawing.Color.Transparent;
-            this.Error.Location = new System.Drawing.Point(53, 415);
-            this.Error.Name = "Error";
-            this.Error.Size = new System.Drawing.Size(252, 36);
-            this.Error.TabIndex = 46;
-            this.Error.Visible = false;
             // 
             // timer
             // 
@@ -405,27 +442,20 @@ namespace TEST2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Lime;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1294, 535);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.Menu);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainFrom";
-            this.StateCommon.Back.Color1 = System.Drawing.Color.RoyalBlue;
-            this.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Sigma;
-            this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.StateCommon.Header.Back.Color1 = System.Drawing.Color.RoyalBlue;
             this.StateCommon.Header.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
-            this.StateCommon.Header.Border.Color1 = System.Drawing.Color.RoyalBlue;
-            this.StateCommon.Header.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.Text = "x";
+            this.StateCommon.OverlayHeaders = ComponentFactory.Krypton.Toolkit.InheritBool.False;
+            this.Text = "OWO";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFrom_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Menu)).EndInit();
@@ -436,12 +466,13 @@ namespace TEST2
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Login)).EndInit();
             this.Tab_Login.ResumeLayout(false);
             this.Tab_Login.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tab_Ordine)).EndInit();
             this.Tab_Ordine.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tab_GeneraQR)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,5 +500,6 @@ namespace TEST2
         private System.Windows.Forms.Timer timerQR;
         private System.Windows.Forms.Label Error;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
