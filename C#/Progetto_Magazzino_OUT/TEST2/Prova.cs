@@ -6,10 +6,11 @@ using AForge.Video.DirectShow;
 using AForge.Video;
 using ZXing;
 using System.Collections.Generic;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace TEST2
 {
-    public partial class Prova : Form
+    public partial class Prova : KryptonForm
     {
         Utente u;
         FilterInfoCollection filtercollection;
@@ -26,53 +27,40 @@ namespace TEST2
             this.MaximizeBox = false;
             u = new Utente();
             lastRes = null;
-            pictureQR.Visible = false;
-            pages = returnAllNewPages();
+            pictureQR.Visible = false;            
             leaveOnlyLoginTab();
 
-            NomeUtente.GotFocus += RemoveTextUser;
-            NomeUtente.LostFocus += AddTextUser;
-            PasswordUtente.GotFocus += RemoveTextPass;
-            PasswordUtente.LostFocus += AddTextPass;         
+            kryptonTextBox1.GotFocus += RemoveTextUser;
+            kryptonTextBox1.LostFocus += AddTextUser;            
 
         }
         private void RemoveTextPass(object sender, EventArgs e)
         {
-            if (PasswordUtente.Text == "Password here")
+            if (kryptonTextBox2.Text == "Password here")
             {
-                PasswordUtente.Text = "";
+                kryptonTextBox2.Text = "";
             }
 
         }
         private void RemoveTextUser(object sender, EventArgs e)
         {
-            if (NomeUtente.Text == "Username here")
+            if (kryptonTextBox1.Text == "Username here")
             {
-                NomeUtente.Text = "";
+                kryptonTextBox1.Text = "";
             }
         }
 
         private void AddTextPass(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(PasswordUtente.Text))
-                PasswordUtente.Text = "Password here";
+            if (string.IsNullOrWhiteSpace(kryptonTextBox2.Text))
+                kryptonTextBox2.Text = "Password here";
 
         }
         private void AddTextUser(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(NomeUtente.Text))
-                NomeUtente.Text = "Username here";
-        }
-        private List<TabPage> returnAllNewPages()
-        {
-            //metodo terribile
-            List<TabPage> pages = new List<TabPage>();
-            pages.Add(Tab_Home);
-            pages.Add(Tab_Utente);
-            pages.Add(Tab_QR);
-            pages.Add(Tab_GeneraQR);
-            return pages;
-        }
+            if (string.IsNullOrWhiteSpace(kryptonTextBox1.Text))
+                kryptonTextBox1.Text = "Username here";
+        }       
         private void Errore(string t)
         {
             timer.Enabled = false;
@@ -114,14 +102,14 @@ namespace TEST2
         {
             try
             {
-                if (NomeUtente.Text == "")
+                if (kryptonTextBox1.Text == "")
                 {
                     MessageBox.Show("Nome utente non inserito", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    userHistory.Add(NomeUtente.Text);
-                    string t = u.popolaDati(NomeUtente.Text, PasswordUtente.Text);
+                    userHistory.Add(kryptonTextBox1.Text);
+                    string t = u.popolaDati(kryptonTextBox1.Text, kryptonTextBox2.Text);
                     if (t == "true")
                     {
                         t = u.controlloConnessione();
@@ -230,14 +218,14 @@ namespace TEST2
         }
 
         private void Prova_Shown(object sender, EventArgs e)
-        {            
-            NomeUtente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            NomeUtente.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            NomeUtente.AutoCompleteCustomSource = userHistory;
-            PasswordUtente.Select();
-            NomeUtente.Select();
+        {
+            kryptonTextBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            kryptonTextBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            kryptonTextBox1.AutoCompleteCustomSource = userHistory;
+            kryptonTextBox2.Select();
+            kryptonTextBox1.Select();
             Error.Select();
-        
+
         }
 
         private void Tab_Utente_Click(object sender, EventArgs e)
