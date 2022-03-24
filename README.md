@@ -1,5 +1,5 @@
 # OWO - *Online Warehouse Organization*
-## *Progetto che fornisce assistenza ai clienti nel atto di compera fornendo precise informazioni basate su una gestione automatizzata degli spazi e del magazzino*
+## *Progetto che fornisce assistenza ai clienti nel atto di compera, fornendo precise informazioni sulla locazione dei prodotti, basate su una gestione automatizzata degli spazi e del magazzino*
 - Luca Bonfissuto
 - Samuele Marelli
 - Alessandro Facciani
