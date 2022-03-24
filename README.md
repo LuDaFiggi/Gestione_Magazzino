@@ -1,5 +1,5 @@
 # OWO - *Online Warehouse Organization*
-## **Progetto che consente la gestione di un magazzino**
+## **Progetto che consente la gestione degli spazi e di un magazzino**
 - Luca Bonfissuto
 - Samuele Marelli
 - Alessandro Facciani
