@@ -4,6 +4,7 @@ public class Condivisa {
     String username;
     String password;
     static Condivisa _instance;
+    static String path ="http://owowh.altervista.org/";
 
     private Condivisa() {
        username ="";
