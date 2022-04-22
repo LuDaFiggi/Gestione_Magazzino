@@ -92,20 +92,43 @@
         android:id="@+id/txtRegistrati"
         android:layout_width="127dp"
         android:layout_height="36dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginBottom="24dp"
         android:text="registrati"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtSito"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="70dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="23dp"
+        android:cropToPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/txtSito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        tools:srcCompat="@android:drawable/ic_menu_info_details" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="70dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="150dp"
+        android:cropToPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        tools:srcCompat="@android:drawable/ic_menu_info_details" />
 
     <TextView
         android:id="@+id/txtSito"
         android:layout_width="127dp"
         android:layout_height="38dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginBottom="150dp"
         android:text="Sito web"
         android:textAlignment="textStart"
         android:textAllCaps="true"
@@ -114,26 +137,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="70dp"
-        android:layout_height="44dp"
-        android:layout_marginBottom="144dp"
-        android:cropToPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:paddingStart="10dp"
+        android:text="Mantieni accesso"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_info_details"
-        tools:srcCompat="@android:drawable/ic_menu_info_details" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="70dp"
-        android:layout_height="44dp"
-        android:layout_marginBottom="208dp"
-        android:cropToPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_info_details"
-        tools:srcCompat="@android:drawable/ic_menu_info_details" />
+        app:layout_constraintTop_toBottomOf="@+id/submit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

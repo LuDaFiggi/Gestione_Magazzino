@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -52,12 +53,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //redirect al sito
+                Uri uri = Uri.parse(Condivisa.path); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openRegisterActivity();
+                //redirect sito register
             }
         });
 
