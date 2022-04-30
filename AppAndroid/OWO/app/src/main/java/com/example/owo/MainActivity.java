@@ -3,24 +3,19 @@ package com.example.owo;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -28,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button submit;
     ProgressBar round;
-    TextView sito,reg;
+    TextView sito, reg;
     Condivisa c;
     WifiManager wifiManager;
 
@@ -64,37 +59,43 @@ public class MainActivity extends AppCompatActivity {
                 //redirect sito register
             }
         });
-
-        submit.setOnClickListener(new View.OnClickListener() {
+        Thread th = new Thread(new Runnable() {
             @Override
-            public void onClick(View v) {
-                //check testo textbox
-                round.setVisibility(View.VISIBLE);
-                try {
-                    boolean ok = checkLogIn();
-                    if (ok){
-
-                        openSubmitActivity();
-                    }
-                    else {
+            public void run() {
+                submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //check testo textbox
+                        boolean check = false;
+                        round.setVisibility(View.VISIBLE);
+                        try {
+                            check = checkLogIn();
+                        } catch (
+                                IOException e) {
+                            createAlert("ERROR!", e.toString());
+                        } catch (
+                                ParserConfigurationException e) {
+                            createAlert("ERROR!", e.toString());
+                        } catch (
+                                SAXException e) {
+                            createAlert("ERROR!", e.toString());
+                        } catch (InterruptedException e) {
+                            createAlert("ERROR!", e.toString());
+                        }
+                        if (check) {
+                            round.setVisibility(View.INVISIBLE);
+                            openProductActivity();
+                            return;
+                        }
                         round.setVisibility(View.INVISIBLE);
                         createAlert("ERROR!", "Credenziali errate");
+
                     }
-                } catch (
-                        IOException e) {
-                    createAlert("ERROR!", e.toString());
-                } catch (
-                        ParserConfigurationException e) {
-                    createAlert("ERROR!", e.toString());
-                } catch (
-                        SAXException e) {
-                    createAlert("ERROR!", e.toString());
-                } catch (InterruptedException e) {
-                    createAlert("ERROR!", e.toString());
-                }
+                });
             }
 
         });
+        th.start();
     }
 
 
@@ -118,8 +119,7 @@ public class MainActivity extends AppCompatActivity {
         XMLParser xml = new XMLParser();
         String path = Condivisa.path + "login.php?email=" + c.username + "&password=" + c.password;
         String result = xml.Parse_Login(path);
-        if(!result.equals("OK"))
-        {
+        if (!result.equals("OK")) {
             check = false;
         }
         return check;
@@ -130,8 +130,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void openRegisterActivity() {
-        Intent intent = new Intent(this, RegisterActivity.class);
+
+    public void openProductActivity() {
+        Intent intent = new Intent(this, ProductActivity.class);
         startActivity(intent);
     }
 

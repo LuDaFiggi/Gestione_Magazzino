@@ -14,7 +14,7 @@
         android:theme="@style/Theme.OWO"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ProductActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

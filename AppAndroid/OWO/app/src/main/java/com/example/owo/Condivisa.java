@@ -1,14 +1,19 @@
 package com.example.owo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Condivisa {
     String username;
     String password;
     static Condivisa _instance;
-    static String path ="http://owowh.altervista.org/";
+    static String path = "http://owowh.altervista.org/webservice/";
+    List<Product> products;
 
     private Condivisa() {
-       username ="";
-       password = "";
+        username = "";
+        password = "";
+        products = new ArrayList<Product>();
     }
 
     public static Condivisa getInstance() {
